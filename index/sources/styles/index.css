@@ -4,15 +4,18 @@
   padding: 0;
 }
 
+html, body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 body {
   background-image: url(../../../resources/Escalar.jpg);
   background-size: cover;
   background-attachment: fixed;
 }
 
-header {
-  color: azure;
-}
 header .personal-info {
   display: flex;
   justify-content: space-between;
@@ -24,8 +27,9 @@ header .personal-info .profile-photo {
 header .personal-info .personal-info {
   display: inline-block;
 }
-header .personal-info div {
-  margin: 10px;
+header .personal-info div h1, header .personal-info div h3 {
+  padding: 0 10px;
+  background: rgba(255, 255, 255, 0.2);
 }
 header h2 {
   text-align: center;
@@ -71,8 +75,10 @@ header img {
   background-color: rgba(255, 255, 255, 0.5);
   display: flex;
   text-align: center;
+  justify-content: flex-start;
   flex-direction: column;
   font-family: "Roboto", sans-serif;
+  height: 100%;
 }
 .text-container .wrapper {
   width: 100%;
@@ -107,6 +113,9 @@ header img {
     height: 100vh;
     width: 100vw;
   }
+  body header {
+    overflow: scroll;
+  }
   body header, body .nav-container {
     width: 40vw;
     height: 50vh;
@@ -121,6 +130,7 @@ header img {
     justify-content: center;
     align-items: center;
     height: 19%;
+    font-size: 1.4rem;
   }
   body .text-container {
     width: 50vw;
