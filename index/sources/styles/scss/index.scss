@@ -104,3 +104,10 @@ header {
         }
     }
 }
+
+//Initial configuration
+.text-container{
+    &.study, &.experience, &.languages, &.skill {
+        display: none;
+    }
+}
