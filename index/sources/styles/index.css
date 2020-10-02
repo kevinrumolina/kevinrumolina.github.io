@@ -16,9 +16,6 @@ body {
   background-attachment: fixed;
 }
 
-header {
-  color: azure;
-}
 header .personal-info {
   display: flex;
   justify-content: space-between;
@@ -30,8 +27,9 @@ header .personal-info .profile-photo {
 header .personal-info .personal-info {
   display: inline-block;
 }
-header .personal-info div {
-  margin: 10px;
+header .personal-info div h1, header .personal-info div h3 {
+  padding: 0 10px;
+  background: rgba(255, 255, 255, 0.2);
 }
 header h2 {
   text-align: center;
@@ -132,6 +130,7 @@ header img {
     justify-content: center;
     align-items: center;
     height: 19%;
+    font-size: 1.4rem;
   }
   body .text-container {
     width: 50vw;

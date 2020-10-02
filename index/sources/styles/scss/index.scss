@@ -20,7 +20,6 @@ body {
     background-attachment: fixed;
 }
 header {
-    color: azure;
     .personal-info {
         display: flex;
         justify-content: space-between;
@@ -32,7 +31,10 @@ header {
             display: inline-block;
         }
         div {
-            margin: 10px;
+            h1, h3{
+                padding: 0 10px;
+                background: rgba(255,255,255,0.2);
+            }
         }
     }
 
@@ -140,7 +142,8 @@ header {
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                height: 19%; 
+                height: 19%;
+                font-size: 1.4rem;
             }
         }
         .text-container {
