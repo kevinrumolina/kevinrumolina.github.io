@@ -120,6 +120,7 @@ header {
         flex-wrap: wrap;
         height: 100vh;
         width: 100vw;
+        header { overflow: scroll; }
         header, .nav-container{
             width: 40vw;
             height: 50vh;
