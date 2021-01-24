@@ -1,0 +1,416 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;500;600&family=IBM+Plex+Sans:wght@300;500;600&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'IBM Plex Mono';
+    font-weight: 300;
+    font-size: 16px;
+}
+
+:root {
+    --white-color: #FFF;
+    --main-color: #0000FF;
+    --secondary-color: #00F3BB;
+    --layout-mobile-padding: 16px;
+    --layout-desktop-padding: 6.94vw;
+    --layout-desktop-padding-medium: 13.88vw;
+    --weight-light: 300;
+    font-size: 16px;
+}
+
+/*Header*/
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    padding: 8px 19px 8px var(--layout-mobile-padding);
+}
+/*Mobile Menu*/
+#burger, .desktop-menu {
+    display: none;
+}
+.linea {
+    height: 10%;
+    width: 75%;
+    background-color: rgb(0, 0, 0);
+    border-radius: 10px;
+    transition: all 0.2s ease;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.linea-top {
+    top: 25%;
+}
+.linea-low {
+    top: 75%;
+}
+.custom-checkbox:checked+.label-burger .linea-top {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+.custom-checkbox:checked+.label-burger .linea-med {
+    opacity: 0;
+}
+.custom-checkbox:checked+.label-burger .linea-low {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+.label-burger {
+    display: inline-block;
+    height: 24px;
+    width: 24px;
+    cursor: pointer;
+    position: relative;
+}
+.menu-desplazable {
+    width: 100%;
+    height: 224px;
+    margin-top: 10px;
+    background-color: var(--main-color);
+    cursor: pointer;
+    position: fixed;
+    transition: all .4s ease;
+    transform: translate(100%)
+}
+#burger:checked ~ .menu-desplazable {
+    /*43px hace referencia al tamaño del simbolo de burger menu + right padding*/
+    transform: translate(calc(-100% + 43px));
+}
+.menu-desplazable ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    list-style-type: none;
+    height: 100%;
+    padding-left: var(--layout-mobile-padding);
+}
+.menu-desplazable a {
+    text-decoration: none;
+    color: var(--white-color);
+    font-weight: var(--weight-light);
+}
+
+/*Title Section*/
+.helloworld-section {
+    margin-top: 29px;
+    padding: 0 var(--layout-mobile-padding);
+}
+.title {
+    font-size: 2.25rem;
+    font-family: 'IBM Plex Sans';
+}
+.helloworld-section h1 .line-through {
+    text-decoration: line-through;
+}
+.helloworld-section h1 .color-blue {
+    color: var(--main-color);
+}
+.helloworld-section p {
+    margin: 16px 0 36px;
+}
+div.button {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 48px;
+    background: var(--secondary-color);
+    border: none;
+    transition: all 1s ease;
+    margin-bottom: 24px;
+}
+div.button:hover {
+    background: linear-gradient(to right, var(--secondary-color), var(--main-color))
+}
+
+/*Episodes Section*/
+.episodes-section {
+    clip-path: polygon(0% 3%, 100% 0%, 100% 97%, 0% 100%);
+    background-color: var(--main-color);
+    height: 1205px;
+}
+.episodes-section .title {
+    color: white;
+    padding: 64px 0 21px var(--layout-mobile-padding) ;
+}
+.episodes-section iframe {
+    width: 93vw;
+    margin-left: 3.5vw;
+}
+
+/*Info Section*/
+.info-section {
+    padding: 0 var(--layout-mobile-padding);
+}
+.info-section img {
+    width: 100%;
+    position: relative;
+    top: -86px;
+}
+.info-section .title {
+    width: 75%;
+    position: relative;
+    top: -59px;
+}
+.info-section p {
+    position: relative;
+    top: -54px;
+}
+.info-section p:first-of-type {
+    margin-bottom: var(--layout-mobile-padding);
+}
+
+/*Photo Section*/
+.photo-section .title {
+    padding: 0 var(--layout-mobile-padding);
+    margin-bottom: 14px;
+}
+.photo-section img {
+    width: 100vw;
+    margin-bottom: -5px;
+}
+
+/*About Us Section*/
+.aboutus-section {
+    margin-top: 48px;
+}
+.aboutus-section .title {
+    padding: 0 var(--layout-mobile-padding);
+    margin-bottom: 37px;
+}
+.aboutus-container {
+    text-align: center;
+}
+.aboutus-container .aboutus-container__image {
+    width: 104px;
+    margin-bottom: 13px;
+} 
+.aboutus-container .aboutus-container__title {
+    font-family: 'IBM Plex Sans';
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 49px;
+}
+
+/*Last News Section*/
+.lastnews-section {
+    clip-path: polygon(0% 10%, 100% 0%, 100% 100%, 0% 100%);
+    background-color: var(--main-color);
+    height: 341px;
+}
+.lastnews-section .title {
+    color: white;
+    padding: 64px 0 32px;
+    margin: 0 var(--layout-mobile-padding);
+    text-align: center;
+}
+.lastnews-section div.button-container {
+    margin: 0 var(--layout-mobile-padding);
+}
+
+/*Footer Styles*/
+footer {
+    text-align: center;
+    padding: 24px 0 31px;
+}
+footer .copyright {
+    margin-bottom: 16px;
+}
+footer .social-media {
+    padding: 0 48px;
+    display: flex; 
+    justify-content: space-between;
+}
+footer .fab {
+    font-size: 1rem;
+}
+
+@media screen and (min-width: 1024px) {
+    /*Header*/
+    header {
+        padding: 22px var(--layout-desktop-padding);
+    }
+    header img {
+        width: 36px;
+        height: 36px;
+    }
+
+    /*Mobile Menu*/
+    .mobile-menu {
+        display: none;
+    }
+    .desktop-menu {
+        display: block;
+    }
+    .desktop-menu ul {
+        list-style-type: none;
+    }
+    .desktop-menu ul li {
+        display: inline-block;
+        margin-left: 38px;
+    }
+    .desktop-menu ul a {
+        text-decoration: none;
+        color: black;
+    }
+    .desktop-menu ul a:hover {
+        text-decoration: line-through;
+        color: var(--secondary-color);
+    }
+    .desktop-menu ul a:active {
+        text-decoration: line-through;
+        color: #060A24;
+        opacity: 44%;
+    }
+
+    /*Title Section*/
+    .helloworld-section {
+        margin: 0;
+        padding: 120px 0 0 13.88vw;
+    }
+    .title {
+        font-size: 4rem;
+    }
+    .helloworld-section p {
+        margin: 0 0 56px;
+        width: 628px;
+    }
+    div.button {
+        width: 226px;
+        height: 56px;
+        margin-bottom: 5px;
+    }
+
+    /*Episodes Section*/
+    .episodes-section {
+        clip-path: polygon(0% 10%, 100% 0%, 100% 90%, 0% 100%);
+        background-color: var(--main-color);
+        height: 1042.5px;
+    }
+    .episodes-section .title {
+        padding: 186px 0 26px 13.88vw;
+        font-size: 3rem;
+    }
+    .episodes-section .iframes-container {
+        margin: 0 var(--layout-desktop-padding) 72px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .episodes-section iframe {
+        width: 40.55vw;
+        margin-left: 0;
+    }
+
+    /*Info Section*/
+    .info-section {
+        padding: 0 var(--layout-desktop-padding-medium);
+        display: flex;
+    }
+    .info-section img {
+        width: 31.75vw;
+        top: -140px;
+    }
+    .info-section div {
+        margin-left: 4%;
+    }
+    .info-section .title {
+        width: 100%;
+        top: 59px;
+        white-space: nowrap;
+        font-size: 3rem;
+        margin-bottom: 24px;
+    }
+    .info-section p {
+        top: 59px;
+        width: 32.22vw;
+    }
+
+    /*Photo Section*/
+    .photo-section {
+        margin-top: -76px;
+    }
+    .photo-section .title {
+        padding: 0 var(--layout-desktop-padding-medium);
+        margin-bottom: 36px;
+        font-size: 3rem;
+    }
+    .photo-section img {
+        width: 33.33vw;
+        margin-left: -13px;
+    }
+    .photo-section img:nth-of-type(3n - 2) {
+        margin-left: 0;
+    }
+
+    /*About Us Section*/
+    .aboutus-section {
+        margin-top: 64px;
+    }
+    .aboutus-section .desktop-container {
+        display: flex;
+        justify-content: space-evenly;
+        margin: 0;
+        
+    }
+    .aboutus-section .title {
+        padding: 0 var(--layout-desktop-padding-medium);
+        margin-bottom: 56px;
+        font-size: 3rem;
+    }
+    .aboutus-container {
+        text-align: center;
+    }
+    .aboutus-container .aboutus-container__image {
+        width: 104px;
+        margin-bottom: 29px;
+    }
+    .aboutus-container .aboutus-container__title {
+        width: 220px;
+        margin-bottom: 34px;
+    }
+
+    /*Last News Section*/
+    .lastnews-section {
+        clip-path: polygon(0% 25%, 100% 0%, 100% 100%, 0% 100%);
+        height: 518px;
+    }
+    .lastnews-section .title {
+        color: white;
+        padding: 213px 0 36px 0;
+        font-size: 3rem;
+    }
+    .lastnews-section div.button-container {
+        margin: 0 auto;
+        width: 345px;
+    }
+    .lastnews-section div.button-container .button{
+        width: 345px;
+    }
+
+    /*Footer Styles*/
+    footer {
+        text-align: center;
+        padding: 36px var(--layout-desktop-padding) 31px;
+        display: flex;
+        justify-content: space-between;
+    }
+    footer .copyright {
+        margin-bottom: 0;
+    }
+    footer .social-media {
+        padding: 0;
+        display: flex;
+        justify-content: space-between;
+    }
+    footer .fab {
+        font-size: 1.125rem;
+        margin-left: 36px;
+    }
+}
